@@ -1,0 +1,66 @@
+#include<iostream>
+using namespace std;
+class add
+{
+  public:
+  int sum (int a, int b)
+  {
+      return a+b;
+  }
+};
+class subtract
+{
+    public:
+    int sub(int a, int b)
+    {
+        return a-b;
+    }
+};
+class multiply
+{
+    public:
+    int mul (int a, int b)
+    {
+        return a*b;
+    }
+};
+ class divide
+{
+    public:
+    double div (double a, double b)
+    {
+        return a/b;
+    }
+};  
+class calculator: public add, public subtract, public multiply, public divide
+{
+    public:
+        calculator()
+        {
+            int choice;
+            double x, y;
+            cout << "please enter two no.s\n";
+            cin >> x >> y;
+            cout << "Menu\n";
+            cout << "1. Addition\n";
+            cout << "2. Subtraction\n";
+            cout << "3. Multiplication\n";
+            cout << "4. Division\n";
+            cout << "Enter the choice: ";
+            cin >> choice;
+            if(choice == 1)
+                cout << "\nAddition is: " << sum(x,y);
+            else if(choice == 2)
+                cout << "\nSubtraction is: " << sub(x,y);
+            else if(choice == 3)
+                cout << "\nMultiplication is: " << mul(x,y);
+            else if(choice == 4)
+                cout << "\nDivision is: " << div(x,y);
+            else
+                cout << "Wrong input";
+        }
+};
+int main()
+{
+    calculator mycalculator;
+}
